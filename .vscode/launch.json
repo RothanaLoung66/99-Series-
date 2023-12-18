@@ -1,0 +1,72 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "amiga",
+      "request": "launch",
+      "name": "Ask for file name",
+      "config": "A500",
+      "program": "",
+      "kickstart": "<Enter path to KICKSTART 1.3 ROM here>"
+    },
+    {
+      "name": "(gdb) Launch",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "enter program name, for example ${workspaceFolder}/a.out",
+      "args": [],
+      "stopAtEntry": false,
+      "cwd": "${fileDirname}",
+      "environment": [],
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        },
+        {
+          "description": "Set Disassembly Flavor to Intel",
+          "text": "-gdb-set disassembly-flavor intel",
+          "ignoreFailures": true
+        }
+      ]
+    },
+    {
+      "name": "Launch Apex Replay Debugger",
+      "type": "apex-replay",
+      "request": "launch",
+      "logFile": "${command:AskForLogFileName}",
+      "stopOnEntry": true,
+      "trace": true
+    },
+    {
+      "type": "amiga",
+      "request": "launch",
+      "name": "Ask for file name",
+      "config": "A500",
+      "program": "",
+      "kickstart": "<Enter path to KICKSTART 1.3 ROM here>"
+    },
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "cppdbg",
+      "request": "launch",
+      "args": [],
+      "stopAtEntry": false,
+      "externalConsole": true,
+      "cwd": "c:/Users/dell/Documents/GitHub/99-Sesies-Studio-Record",
+      "program": "c:/Users/dell/Documents/GitHub/99-Sesies-Studio-Record/build/Debug/outDebug",
+      "MIMode": "gdb",
+      "miDebuggerPath": "gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ]
+    }
+  ]
+}
